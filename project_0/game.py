@@ -18,6 +18,7 @@ def game_core(number):
 '''Запускаем функцию 1000 раз'''
 predict_count = 0
 for i in range(1000):
+    np.random.seed(1)  # фиксируем сид для воспроизводимости
     number = np.random.randint(1, 101) # Случайным образом загадывается число.
     predict_count += game_core(number) # Сумма всех попыток.
 print(f"Ваш алгоритм угадывает число в среднем за {int(predict_count / i)} попыток")
